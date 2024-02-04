@@ -1,14 +1,27 @@
 #include <iostream>
-using namespace std;
 
 int main()
 {   
-    int a = 0;
+    int random;
+    std::string player;
+    int computer;
+    srand(time(NULL));
+    random = rand() % 3;
 
-    switch (a) {
-        case 0: 
-        cout << "hio";
-        case 1:
-        cout << "a";
+    computer = random;
+
+    std::cout << random;
+    std::cout << computer;
+
+    switch (computer)
+    {
+    case 0:
+        computer = 10;
+    case 1:
+        computer = 20;
+    case 2:
+        computer = 30;
     }
+
+    std::cout << computer;
 }

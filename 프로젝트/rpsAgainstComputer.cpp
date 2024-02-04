@@ -9,22 +9,20 @@ int main()
     random = rand() % 3;
 
     std::cout << random;
+    
+    if (random == 0) {
+        computer = "r";
+    } else if (random == 1) {
+        computer = "p";
+    } else {
+        computer = "s";
+    }
     std::cout << "Player Input: ";
     std::cin >> player;
 
-    switch (random)
-    {
-    case 0:
-        computer = "r";
-    case 1:
-        computer = "p";
-    case 2:
-        computer = "s";
-    }
-
     std::cout << "Computer Input: " << computer << std::endl;
 
-/*
+
     if (player == computer)
     {
         std::cout << "Tie" << std::endl;
@@ -53,5 +51,5 @@ int main()
     {
         std::cout << "Player Wins" << std::endl;
     }
-    */
+    
 }

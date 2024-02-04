@@ -1,6 +1,14 @@
 #include <iostream>
+using namespace std;
 
 int main()
-{
-    std::cout << "good morning" << std::endl;
+{   
+    int a = 0;
+
+    switch (a) {
+        case 0: 
+        cout << "hio";
+        case 1:
+        cout << "a";
+    }
 }

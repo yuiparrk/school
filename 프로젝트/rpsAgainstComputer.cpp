@@ -8,20 +8,22 @@ int main()
     srand(time(NULL));
     random = rand() % 3;
 
-    std::cout << random;
-    
-    if (random == 0) {
+    if (random == 0)
+    {
         computer = "r";
-    } else if (random == 1) {
+    }
+    else if (random == 1)
+    {
         computer = "p";
-    } else {
+    }
+    else
+    {
         computer = "s";
     }
+    
     std::cout << "Player Input: ";
     std::cin >> player;
-
     std::cout << "Computer Input: " << computer << std::endl;
-
 
     if (player == computer)
     {
@@ -51,5 +53,4 @@ int main()
     {
         std::cout << "Player Wins" << std::endl;
     }
-    
 }

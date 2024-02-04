@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-void login() {}
-
 int main()
 {
     std::string inputPassword;
@@ -10,25 +8,21 @@ int main()
 
     std::cout << "Enter your password: " << std::endl;
     std::cin >> inputPassword;
-    std::ifstream readFile("passwords.txt");
+    std::ifstream readFile("loginPasswords.txt");
     getline(readFile, password);
 
     if (password == inputPassword)
     {
-        login();
+        std::string text;
+
+        std::ofstream writeFile("loginText.txt");
+        std::cout << "Input your text: ";
+        std::cin >> text;
+        writeFile << text;
     }
     else
     {
         std::cout << "Incorrect password" << std::endl;
-    }
-
-    void login();
-    {
-        std::string write;
-
-        std::cout << "Enter your text: ";
-        std::cin >> write;
-        std::ofstream writeFile << write;
     }
 }
 

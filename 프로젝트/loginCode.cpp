@@ -25,6 +25,3 @@ int main()
         std::cout << "Incorrect password" << std::endl;
     }
 }
-
-// have a seperate text file database for usernames and passwords
-// link that account to another text file

@@ -13,7 +13,20 @@ division, along with its sales figure.
 
 #include <iostream>
 
+double getSales();
+void findHighest();
+
 int main()
 {
+    getSales();
+}
 
+double getSales()
+{
+
+}
+
+void findHighest()
+{
+    
 }

@@ -18,7 +18,8 @@ double getSales(std::string division)
     double sales;
     std::cout << "What is the quartery sales figure of the " << division << " division?" << std::endl;
     std::cin >> sales;
-    if (sales < 0) {
+    if (sales < 0)
+    {
         std::cout << "Invalid input" << std::endl;
         exit(0);
     }
@@ -30,15 +31,18 @@ void findHighest(double northEast, double southEast, double northWest, double so
     double highest = northEast;
     std::string highestDivision = "Northeast";
 
-    if (southEast > northEast) {
+    if (southEast > northEast)
+    {
         highest = southEast;
         highestDivision = "southEast";
     }
-    if (northWest > southEast) {
+    if (northWest > southEast)
+    {
         highest = northWest;
         highestDivision = "northWest";
     }
-    if (southWest > northWest) {
+    if (southWest > northWest)
+    {
         highest = southWest;
         highestDivision = "southWest";
     }

@@ -20,7 +20,17 @@ total charges. Input Validation: Do not accept negative numbers for any data.
 
 #include <iostream>
 
-int main()
+void inPatient()
 {
     
+}
+int main()
+{
+    char* input;
+    std::cout << "Were you admitted as a in-patient or an out-patient? (i/o)" << std::endl;
+    std::cin >> input;
+
+    if (input == "i") {
+        inPatient();
+    }
 }

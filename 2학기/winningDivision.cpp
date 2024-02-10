@@ -34,17 +34,17 @@ void findHighest(double northEast, double southEast, double northWest, double so
     if (southEast > northEast)
     {
         highest = southEast;
-        highestDivision = "southEast";
+        highestDivision = "Southeast";
     }
     if (northWest > southEast)
     {
         highest = northWest;
-        highestDivision = "northWest";
+        highestDivision = "Northwest";
     }
     if (southWest > northWest)
     {
         highest = southWest;
-        highestDivision = "southWest";
+        highestDivision = "Southwest";
     }
 
     std::cout << "The highest grossing division is the " << highestDivision << " division with $" << highest << " earned.";

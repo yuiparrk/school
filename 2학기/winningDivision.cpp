@@ -12,7 +12,6 @@ division, along with its sales figure.
 */
 
 #include <iostream>
-#include <string>
 
 double getSales(std::string division)
 {
@@ -20,21 +19,39 @@ double getSales(std::string division)
     std::cout << "What is the quartery sales figure of the " << division << " division?" << std::endl;
     std::cin >> sales;
     if (sales < 0) {
-        std::cout << "Input a amount higher than 0";
-        return 0;
+        std::cout << "Invalid input" << std::endl;
+        exit(0);
     }
     return sales;
 }
 
-void findHighest()
+void findHighest(double northEast, double southEast, double northWest, double southWest)
 {
-    
+    double highest = northEast;
+    std::string highestDivision = "Northeast";
+
+    if (southEast > northEast) {
+        highest = southEast;
+        highestDivision = "southEast";
+    }
+    if (northWest > southEast) {
+        highest = northWest;
+        highestDivision = "northWest";
+    }
+    if (southWest > northWest) {
+        highest = southWest;
+        highestDivision = "southWest";
+    }
+
+    std::cout << "The highest grossing division is the " << highestDivision << "division with $" << highest << " earned.";
 }
 
 int main()
 {
-    getSales("Northeast");
-    getSales("Southeast");
-    getSales("Northwest");
-    getSales("Southwest");
+    double northEast = getSales("Northeast");
+    double southEast = getSales("Southeast");
+    double northWest = getSales("Northwest");
+    double southWest = getSales("Southwest");
+
+    findHighest(northEast, southEast, northWest, southWest);
 }

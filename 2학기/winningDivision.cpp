@@ -12,34 +12,29 @@ division, along with its sales figure.
 */
 
 #include <iostream>
+#include <string>
 
-double getSales();
-void findHighest();
-double NE, SE, NW, SW;
-
-int main()
+double getSales(string division)
 {
-    getSales();
-    std::cout << NE << SE << NW << SW;
-}
+    double sales;
+    std::cout << "What is the quartery sales figure of the " << division << "division?" << std::endl;
+    std::cin >> sales;
+    if (sales < 0) {
+        std::cout << "Input a amount higher than 0";
+        return 0;
+    }
 
-double getSales()
-{
-    std::cout << "What is the quartery sales figure of the Northeast division?" << std::endl;
-    std::cin >> NE;
-    std::cout << "What is the quartery sales figure of the Southeast division?" << std::endl;
-    std::cin >> SE;
-    std::cout << "What is the quartery sales figure of the Northwest division?" << std::endl;
-    std::cin >> NW;
-    std::cout << "What is the quartery sales figure of the Southwest division?" << std::endl;
-    std::cin >> SW;
-
-    return NE;
-    return SE;
-    return NW;
-    return SW;
 }
 
 void findHighest()
 {
+    
+}
+
+int main()
+{
+    getSales("Northeast");
+    getSales("Southeast");
+    getSales("Northwest");
+    getSales("Southwest");
 }

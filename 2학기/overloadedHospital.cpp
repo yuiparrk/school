@@ -39,7 +39,7 @@ double inPatient(int numOfDays, double dailyRate, double medicationCharges, doub
         exit(0);
     }
 
-    total = numOfDays + dailyRate + medicationCharges + hospitalCharges;
+    total = (numOfDays * dailyRate) + medicationCharges + hospitalCharges;
     return total;
 }
 

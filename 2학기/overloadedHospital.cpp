@@ -22,14 +22,14 @@ total charges. Input Validation: Do not accept negative numbers for any data.
 
 double inPatient(int numOfDays, double dailyRate, double medicationCharges, double hospitalCharges)
 {
-            std::cout << "How long did you spend in the hospital?" << std::endl;
-        std::cin >> numOfDays;
-                std::cout << "What was the daily rate?" << std::endl;
-        std::cin >> dailyRate;
-                std::cout << "What were the hospital medication charges?" << std::endl;
-        std::cin >> medicationCharges;
-                std::cout << "What were the hospital service charges?" << std::endl;
-        std::cin >> hospitalCharges;
+    std::cout << "How long did you spend in the hospital?" << std::endl;
+    std::cin >> numOfDays;
+    std::cout << "What was the daily rate?" << std::endl;
+    std::cin >> dailyRate;
+    std::cout << "What were the hospital medication charges?" << std::endl;
+    std::cin >> medicationCharges;
+    std::cout << "What were the hospital service charges?" << std::endl;
+    std::cin >> hospitalCharges;
 }
 
 double outPatient()

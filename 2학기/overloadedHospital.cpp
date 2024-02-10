@@ -42,8 +42,20 @@ double inPatient(int numOfDays, double dailyRate, double medicationCharges, doub
     return total;
 }
 
-double outPatient()
-{
+double outPatient(double hospitalCharges, double medicationCharges)
+{   
+    double total;
+    std::cout << "What were the hospital service charges?" << std::endl;
+    std::cin >> hospitalCharges;
+        std::cout << "What were the hospital medication charges?" << std::endl;
+    std::cin >> medicationCharges;
+    if (hospitalCharges < 0 || medicationCharges < 0) {
+                std::cout << "Invalid input" << std::endl;
+        exit(0);
+    }
+
+    total = hospitalCharges + medicationCharges;
+    return total;
 }
 
 int main()
@@ -52,17 +64,21 @@ int main()
     std::cout << "Were you admitted as a in-patient or an out-patient? (i/o)" << std::endl;
     std::cin >> input;
 
-    if (input == "i")
-    {
-        int numOfDays;
+            int numOfDays;
         double dailyRate;
         double medicationCharges;
         double hospitalCharges;
-        double total = inPatient(numOfDays, dailyRate, medicationCharges, hospitalCharges);
+        double total;
+
+    if (input == "i")
+    {
+        total = inPatient(numOfDays, dailyRate, medicationCharges, hospitalCharges);
         std::cout << "Total charges: $" << total << std::endl;
     }
     else if (input == "o")
     {
+        total = outPatient(hospitalCharges, medicationCharges);
+                std::cout << "Total charges: $" << total << std::endl;
     }
     else
     {

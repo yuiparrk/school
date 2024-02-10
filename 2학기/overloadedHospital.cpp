@@ -66,11 +66,11 @@ int main()
     std::cout << "Were you admitted as a in-patient or an out-patient? (i/o)" << std::endl;
     std::cin >> input;
 
-    int numOfDays;
-    double dailyRate;
-    double medicationCharges;
-    double hospitalCharges;
-    double total;
+    int numOfDays = 0;
+    double dailyRate = 0;
+    double medicationCharges = 0;
+    double hospitalCharges = 0;
+    double total = 0;
 
     if (input == "i")
     {

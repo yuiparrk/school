@@ -14,16 +14,16 @@ division, along with its sales figure.
 #include <iostream>
 #include <string>
 
-double getSales(string division)
+double getSales(std::string division)
 {
     double sales;
-    std::cout << "What is the quartery sales figure of the " << division << "division?" << std::endl;
+    std::cout << "What is the quartery sales figure of the " << division << " division?" << std::endl;
     std::cin >> sales;
     if (sales < 0) {
         std::cout << "Input a amount higher than 0";
         return 0;
     }
-
+    return sales;
 }
 
 void findHighest()

@@ -17,7 +17,11 @@ int main()
     for (int i = 0; i < months; i++)
     {
         std::cin >> input[i];
+        if (input[i] < 0) 
+        {
+            exit(0);
+        }
     }
 
-    
+
 }

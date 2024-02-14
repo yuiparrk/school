@@ -25,9 +25,9 @@ int main()
 
     for (int i = 0; i < months; i++)
     {
-        std::cout << "Month " << i + 1<< ": " << std::endl;
+        std::cout << "Month " << i + 1 << ": " << std::endl;
         std::cin >> input[i];
-        if (input[i] < 0) 
+        if (input[i] < 0)
         {
             std::cout << "Please do not input negative numbers" << std::endl;
             return 1;
@@ -43,12 +43,14 @@ int main()
 
     for (int i = 0; i < months; i++)
     {
-        if (input[i] > highest) {
+        if (input[i] > highest)
+        {
             highest = input[i];
             highestMonth = i + 1;
         }
 
-        if (input[i] < lowest) {
+        if (input[i] < lowest)
+        {
             lowest = input[i];
             lowestMonth = i + 1;
         }

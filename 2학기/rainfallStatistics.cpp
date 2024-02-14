@@ -8,52 +8,55 @@ Input Validation: Do not accept negative numbers for monthly rainfall figures.
 */
 
 #include <iostream>
+#include <climits>
 
 int main()
 {
-    int months = 12;
-    double input[months];
-    double total;
+    const int months = 12;
+    double input[months] = {0};
+    double total = 0;
     double average;
-    double highest = 0;
-    int highestMonth;
-    double lowest = 0;
-    int lowestMonth;
+    double highest = INT_MIN;
+    int highestMonth = 0;
+    double lowest = INT_MAX;
+    int lowestMonth = 0;
 
     std::cout << "Enter the total rainfall for each month: " << std::endl;
 
-    for (int i = 1; i <= months; i++)
+    for (int i = 0; i < months; i++)
     {
-        std::cout << "Month " << i << ": " << std::endl;
+        std::cout << "Month " << i + 1<< ": " << std::endl;
         std::cin >> input[i];
         if (input[i] < 0) 
         {
-            exit(0);
+            std::cout << "Please do not input negative numbers" << std::endl;
+            return 1;
         }
     }
 
-    for (int i = 0; i <= months; i++)
+    for (int i = 0; i < months; i++)
     {
         total = total + input[i];
     }
-    average = total / 12;
 
-    for (int i = 0; i <= months; i++)
+    average = total / months;
+
+    for (int i = 0; i < months; i++)
     {
         if (input[i] > highest) {
             highest = input[i];
-            highestMonth = i;
+            highestMonth = i + 1;
         }
 
         if (input[i] < lowest) {
             lowest = input[i];
-            lowestMonth = i;
+            lowestMonth = i + 1;
         }
     }
 
     std::cout << "Total amount of rainfall: " << total << std::endl;
     std::cout << "Average amount of rainfall each month: " << average << std::endl;
-        std::cout << "Highest month of rainfall: Month " << highestMonth << ": " << highest << std::endl;
+    std::cout << "Highest month of rainfall: Month " << highestMonth << ": " << highest << std::endl;
     std::cout << "Lowest month of rainfall: Month " << lowestMonth << ": " << lowest << std::endl;
-
+    return 0;
 }

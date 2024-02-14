@@ -1,46 +1,54 @@
 #include <iostream>
-#include <string>
-using namespace std;
+#include <climits>
 
-double getSales(const string& divisionName) {
-    double sales;
-    do {
-        cout << "Enter the quarterly sales figure for " << divisionName << ": $";
-        cin >> sales;
-        if (sales < 0.0) {
-            cout << "Invalid input. Sales figure cannot be negative. Please try again." << endl;
+int main()
+{
+    const int months = 12; // const int for fixed number of months
+    double input[months] = {0}; // Initialize all elements to 0
+    double total = 0; // Initialize total to 0
+    double average;
+    double highest = INT_MIN;
+    int highestMonth = 0; // Initialize highestMonth to 0
+    double lowest = INT_MAX;
+    int lowestMonth = 0; // Initialize lowestMonth to 0
+
+    std::cout << "Enter the total rainfall for each month: " << std::endl;
+
+    for (int i = 0; i < months; i++) // Corrected loop condition
+    {
+        std::cout << "Month " << i + 1 << ": " << std::endl;
+        std::cin >> input[i];
+        if (input[i] < 0) 
+        {
+            std::cout << "Rainfall cannot be negative. Exiting...\n"; // Inform user about invalid input
+            return 1; // Return non-zero value to indicate error
         }
-    } while (sales < 0.0);
-    return sales;
-}
-
-void findHighest(double northeastSales, double southeastSales, double northwestSales, double southwestSales) {
-    double highestSales = northeastSales;
-    string highestDivision = "Northeast";
-
-    if (southeastSales > highestSales) {
-        highestSales = southeastSales;
-        highestDivision = "Southeast";
-    }
-    if (northwestSales > highestSales) {
-        highestSales = northwestSales;
-        highestDivision = "Northwest";
-    }
-    if (southwestSales > highestSales) {
-        highestSales = southwestSales;
-        highestDivision = "Southwest";
     }
 
-    cout << "The division with the highest sales is " << highestDivision << " with sales of $" << highestSales << endl;
-}
+    for (int i = 0; i < months; i++) // Corrected loop condition
+    {
+        total = total + input[i];
+    }
 
-int main() {
-    double northeastSales = getSales("Northeast");
-    double southeastSales = getSales("Southeast");
-    double northwestSales = getSales("Northwest");
-    double southwestSales = getSales("Southwest");
+    average = total / months; // Use 'months' variable instead of hardcoding 12
 
-    findHighest(northeastSales, southeastSales, northwestSales, southwestSales);
+    for (int i = 0; i < months; i++) // Corrected loop condition
+    {
+        if (input[i] > highest) {
+            highest = input[i];
+            highestMonth = i + 1; // Adjust for month numbering starting from 1
+        }
 
-    return 0;
+        if (input[i] < lowest) {
+            lowest = input[i];
+            lowestMonth = i + 1; // Adjust for month numbering starting from 1
+        }
+    }
+
+    std::cout << "Total amount of rainfall: " << total << std::endl;
+    std::cout << "Average amount of rainfall each month: " << average << std::endl;
+    std::cout << "Highest month of rainfall: Month " << highestMonth << ": " << highest << std::endl;
+    std::cout << "Lowest month of rainfall: Month " << lowestMonth << ": " << lowest << std::endl;
+
+    return 0; // Indicate successful completion of the program
 }

@@ -9,6 +9,7 @@ Input Validation: Do not accept negative numbers for monthly rainfall figures.
 
 #include <iostream>
 #include <climits>
+#include <iomanip>
 
 int main()
 {
@@ -30,7 +31,7 @@ int main()
         if (input[i] < 0)
         {
             std::cout << "Please do not input negative numbers" << std::endl;
-            return 1;
+            i--;
         }
     }
 
@@ -56,7 +57,7 @@ int main()
         }
     }
 
-    std::cout << "Total amount of rainfall: " << total << std::endl;
+    std::cout << "Total amount of rainfall: " << std::fixed << std::setprecision(2) << total << std::endl;
     std::cout << "Average amount of rainfall each month: " << average << std::endl;
     std::cout << "Highest month of rainfall: Month " << highestMonth << ": " << highest << std::endl;
     std::cout << "Lowest month of rainfall: Month " << lowestMonth << ": " << lowest << std::endl;

@@ -19,18 +19,42 @@ program.
 
 int main()
 {
-    std::string fileName;
-    std::string text;
-    //read content into an array
-    //display:
-    // lowest # + highest # + total # + average #
+    const int size = 1000;
+    int array[size];
+    int num;
+    int count = 0;
+    double lowest = INT_MAX;
+    double highest = INT_MIN;
+    double total = 0;
+    double average = 0;
 
-    std::cout << "What is the file name?: ";
-    std::cin >> fileName;
+    std::string input;
+    std::cout << "Enter the name of the file: ";
+    std::cin >> input;
 
-    std::ifstream openFile(fileName);
+    std::ifstream file(input);
 
-      while (getline (openFile, text)) {
-    std::cout << text << std::endl;
-  }
+    while (file >> num) {
+        array[count] = num;
+        std::cout << array[count] << std::endl;
+        count++;
+        total += num;
+
+        if (num < lowest) 
+        {
+            lowest = num;
+        }
+        if (num > highest)
+        {
+            highest = num;
+        }
+    }
+
+    average = total / count;
+
+    std::cout << lowest << std::endl;
+    std::cout << highest << std::endl;
+    std::cout << total << std::endl;
+    std::cout << average << std::endl;
+
 }

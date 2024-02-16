@@ -37,7 +37,7 @@ int main()
 
     for (int i = 0; i < months; i++)
     {
-        total = total + input[i];
+        total += input[i];
     }
 
     average = total / months;

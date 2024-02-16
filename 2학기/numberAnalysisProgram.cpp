@@ -21,7 +21,7 @@ int main()
 {
     const int size = 1000;
     int array[size];
-    int num;
+    int file;
     int count = 0;
     double lowest = INT_MAX;
     double highest = INT_MIN;
@@ -32,22 +32,22 @@ int main()
     std::cout << "Enter the name of the file: ";
     std::cin >> input;
 
-    std::ifstream file(input);
+    std::ifstream readFile(input);
 
-    while (file >> num)
+    while (readFile >> file)
     {
-        array[count] = num;
+        array[count] = file;
         // std::cout << array[count] << std::endl;
         count++;
-        total += num;
+        total += file;
 
-        if (num < lowest)
+        if (file < lowest)
         {
-            lowest = num;
+            lowest = file;
         }
-        if (num > highest)
+        if (file > highest)
         {
-            highest = num;
+            highest = file;
         }
     }
 

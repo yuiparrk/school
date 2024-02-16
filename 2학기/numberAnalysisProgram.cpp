@@ -16,6 +16,7 @@ program.
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 int main()
 {
@@ -34,10 +35,9 @@ int main()
 
     std::ifstream readFile(input);
 
-    while (readFile >> file)
+    while (readFile >> file && count < size)
     {
         array[count] = file;
-        // std::cout << array[count] << std::endl;
         count++;
         total += file;
 
@@ -56,5 +56,6 @@ int main()
     std::cout << "Lowest number: " << lowest << std::endl;
     std::cout << "Highest number: " << highest << std::endl;
     std::cout << "Total of the numbers: " << total << std::endl;
-    std::cout << "Average of the numbers: " << average << std::endl;
+    std::cout << "Average of the numbers: " << std::fixed << std::setprecision(2) << average << std::endl;
+    return 0;
 }

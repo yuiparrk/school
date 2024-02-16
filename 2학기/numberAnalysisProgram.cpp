@@ -34,13 +34,14 @@ int main()
 
     std::ifstream file(input);
 
-    while (file >> num) {
+    while (file >> num)
+    {
         array[count] = num;
-        std::cout << array[count] << std::endl;
+        // std::cout << array[count] << std::endl;
         count++;
         total += num;
 
-        if (num < lowest) 
+        if (num < lowest)
         {
             lowest = num;
         }
@@ -52,9 +53,8 @@ int main()
 
     average = total / count;
 
-    std::cout << lowest << std::endl;
-    std::cout << highest << std::endl;
-    std::cout << total << std::endl;
-    std::cout << average << std::endl;
-
+    std::cout << "Lowest number: " << lowest << std::endl;
+    std::cout << "Highest number: " << highest << std::endl;
+    std::cout << "Total of the numbers: " << total << std::endl;
+    std::cout << "Average of the numbers: " << average << std::endl;
 }

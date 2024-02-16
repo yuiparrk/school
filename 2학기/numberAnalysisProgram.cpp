@@ -17,6 +17,7 @@ program.
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <climits>
 
 int main()
 {

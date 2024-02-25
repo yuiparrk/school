@@ -30,8 +30,16 @@ int *arrayExpander(int array[], int size)
 
 int main()
 {
-    int array[] = {1, 2, 3, 4, 5};
-    int size = 5;
+    int size;
+    int *array = new int[size];
+
+    std::cout << "Input the size of the array: " << std::endl;
+    std::cin >> size;
+    std::cout << "Input the contents of the array: " << std::endl;
+    for (int i = 0; i < size; i++) 
+    {
+        std::cin >> array[i];
+    }
 
     int *expandedArray = arrayExpander(array, size);
 

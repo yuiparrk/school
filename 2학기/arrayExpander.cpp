@@ -24,6 +24,7 @@ int *arrayExpander(int array[], int size)
     {
         newArray[i] = 0;
     }
+
     return newArray;
 }
 
@@ -34,7 +35,7 @@ int main()
 
     int *expandedArray = arrayExpander(array, size);
 
-    for (int i = 0; i < size * 2; ++i)
+    for (int i = 0; i < size * 2; i++)
     {
         std::cout << "[" << expandedArray[i] << "] ";
     }

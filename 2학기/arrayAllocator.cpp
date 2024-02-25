@@ -11,10 +11,8 @@ should return a pointer to the array.
 
 int main()
 {
-allocate();
 }
 
 void allocate()
 {
-std::cout << ""
 }

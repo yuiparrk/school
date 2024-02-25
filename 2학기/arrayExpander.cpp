@@ -47,4 +47,6 @@ int main()
     {
         std::cout << "[" << expandedArray[i] << "] ";
     }
+
+    return 0;
 }

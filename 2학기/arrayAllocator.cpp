@@ -11,21 +11,29 @@ should return a pointer to the array.
 int *allocateArray(int size)
 {
     int *newArray = new int[size];
+
+    std::cout << "Input the contents of the array: " << std::endl;
     for (int i = 0; i < size; i++)
     {
-        newArray[i] = i + 1;
+        std::cin >> newArray[i];
     }
+
     return newArray;
 }
 
 int main()
 {
-    int size = 5;
+    int size;
+
+    std::cout << "Input the size of the array: " << std::endl;
+    std::cin >> size;
+    
     int *allocatedArray = allocateArray(size);
 
     for (int i = 0; i < size; i++)
     {
-        std::cout << allocatedArray[i];
+        std::cout << "[" << allocatedArray[i] << "] ";
     }
+
     return 0;
 }

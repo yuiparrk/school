@@ -37,7 +37,7 @@ int main()
 
     int *array = new int[size];
     std::cout << "Input the contents of the array: " << std::endl;
-    for (int i = 0; i < size; i++) 
+    for (int i = 0; i < size; i++)
     {
         std::cin >> array[i];
     }

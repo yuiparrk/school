@@ -27,13 +27,15 @@ int main()
 
     std::cout << "Input the size of the array: " << std::endl;
     std::cin >> size;
-    
+
     int *allocatedArray = allocateArray(size);
 
     for (int i = 0; i < size; i++)
     {
         std::cout << "[" << allocatedArray[i] << "] ";
     }
+
+    delete[] allocatedArray;
 
     return 0;
 }

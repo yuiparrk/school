@@ -1,33 +1,27 @@
-#include <iostream>
+int main()
+{
+    int size;
 
-int* allocateIntArray(int numElements) {
-    // Dynamically allocate memory for the array
-    int* arr = new int[numElements];
-    return arr;
-}
+    std::cout << "Input the size of the array: " << std::endl;
+    std::cin >> size;
 
-int main() {
-    int numElements;
-    std::cout << "Enter the number of elements to allocate: ";
-    std::cin >> numElements;
+    int *array = new int[size];
 
-    // Call the function to allocate the array
-    int* myArray = allocateIntArray(numElements);
-
-    // Example usage: set some values in the array
-    for (int i = 0; i < numElements; ++i) {
-        myArray[i] = i * 2;
+    std::cout << "Input the contents of the array: " << std::endl;
+    for (int i = 0; i < size; i++) 
+    {
+        std::cin >> array[i];
     }
 
-    // Example usage: print the values in the array
-    std::cout << "Array elements: ";
-    for (int i = 0; i < numElements; ++i) {
-        std::cout << myArray[i] << " ";
-    }
-    std::cout << std::endl;
+    int *expandedArray = arrayExpander(array, size);
 
-    // Don't forget to deallocate the memory when done
-    delete[] myArray;
+    for (int i = 0; i < size * 2; i++)
+    {
+        std::cout << "[" << expandedArray[i] << "] ";
+    }
+
+    delete[] array; // Deallocate memory for the original array
+    delete[] expandedArray; // Deallocate memory for the expanded array
 
     return 0;
 }

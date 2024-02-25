@@ -12,7 +12,8 @@ pointer to the new array.
 
 int *arrayExpander(int array[], int size)
 {
-    int newSize = size * 2;
+    int newSize;
+    newSize = size * 2;
     int *newArray = new int[newSize];
 
     for (int i = 0; i < size; i++)
@@ -31,10 +32,10 @@ int *arrayExpander(int array[], int size)
 int main()
 {
     int size;
-    int *array = new int[size];
-
     std::cout << "Input the size of the array: " << std::endl;
     std::cin >> size;
+
+    int *array = new int[size];
     std::cout << "Input the contents of the array: " << std::endl;
     for (int i = 0; i < size; i++) 
     {
@@ -47,6 +48,9 @@ int main()
     {
         std::cout << "[" << expandedArray[i] << "] ";
     }
+
+    delete[] array;
+    delete[] expandedArray;
 
     return 0;
 }

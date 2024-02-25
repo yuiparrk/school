@@ -1,7 +1,6 @@
 /*
 Array Allocator
 
-
 Write a function that dynamically allocates an array of integers. The function should
 accept an integer argument indicating the number of elements to allocate. The function
 should return a pointer to the array.
@@ -11,8 +10,11 @@ should return a pointer to the array.
 
 int main()
 {
+int size = 5;
+int* allocatedArray = allocate(size);
 }
 
-void allocate()
+int *allocate(int size)
 {
+    int *newArray = new int[size];
 }

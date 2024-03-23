@@ -8,8 +8,22 @@ a string, passes it to the function, and then displays the function’s return v
 */
 
 #include <iostream>
+#include <cstring>
+
+int stringLength(const char *input) {
+    return std::strlen(input);
+}
 
 int main()
 {
-    
+    int size = 100;
+    char input[size];
+
+    std::cout << "Input a string: ";
+    std::cin.getline(input, size);
+
+    int output = stringLength(input);
+
+    std::cout << output;
+    return 0;
 }

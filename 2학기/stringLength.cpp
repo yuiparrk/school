@@ -23,7 +23,7 @@ int main()
     std::cin.getline(input, size);
 
     int output = stringLength(input);
-
     std::cout << output;
+
     return 0;
 }

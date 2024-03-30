@@ -1,0 +1,25 @@
+//courseID:CIS-265-098WB.2024SP
+//name: Daniel Park
+//Prof. Wang
+//project5
+//Due by 2/18/2024
+
+/*
+steps
+1.Input:
+  a.input
+  
+2.Processing: 
+  a.array[count] = file;
+  b.count++
+  c.total += file
+  d.lowest = file
+  e.highest = file
+  f.average = total / count
+    
+3.Output:
+  a.lowest
+  b.highest
+  c.total
+  d.average
+*/

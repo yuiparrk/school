@@ -24,7 +24,8 @@ entire monthly budget.
 #include <iostream>
 #include <string>
 
-struct MonthlyBudget {
+struct MonthlyBudget
+{
     double housing;
     double utilities;
     double householdExpenses;
@@ -37,7 +38,8 @@ struct MonthlyBudget {
     double miscellaneous;
 };
 
-void input(MonthlyBudget &budget) {
+void input(MonthlyBudget &budget)
+{
     std::cout << "Enter the amounts spent in each budget category during a month:" << std::endl;
     std::cout << "Housing: ";
     std::cin >> budget.housing;
@@ -61,12 +63,13 @@ void input(MonthlyBudget &budget) {
     std::cin >> budget.miscellaneous;
 }
 
-void output(const MonthlyBudget &budget) {
+void output(const MonthlyBudget &budget)
+{
     double totalBudget = 1420;
     double totalExpenses = budget.housing + budget.utilities + budget.householdExpenses + budget.transportation +
-                            budget.food + budget.medical + budget.insurance + budget.entertainment +
-                            budget.clothing + budget.miscellaneous;
-    
+                           budget.food + budget.medical + budget.insurance + budget.entertainment +
+                           budget.clothing + budget.miscellaneous;
+
     std::cout << "Category           Over/Under" << std::endl;
     std::cout << "-----------------------------" << std::endl;
     std::cout << "Housing               " << budget.housing - 500 << std::endl;
@@ -83,7 +86,8 @@ void output(const MonthlyBudget &budget) {
     std::cout << "Total                 " << totalExpenses - totalBudget << std::endl;
 }
 
-int main() {
+int main()
+{
     MonthlyBudget budget;
 
     input(budget);

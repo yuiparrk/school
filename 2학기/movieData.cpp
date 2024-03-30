@@ -16,23 +16,24 @@ movie in a clearly formatted manner.
 #include <iostream>
 #include <string>
 
-struct MovieData {
+struct MovieData
+{
     std::string title;
     std::string director;
     int year;
     int time;
 };
 
-void display(const MovieData& movie)
+void display(const MovieData &movie)
 {
     std::cout << "Title: " << movie.title << std::endl;
     std::cout << "Director: " << movie.director << std::endl;
     std::cout << "Year Released: " << movie.year << std::endl;
-    std::cout << "Running Time (minutes): " << movie.time << std::endl << std::endl;
-
+    std::cout << "Running Time (minutes): " << movie.time << std::endl
+              << std::endl;
 }
 
-int main() 
+int main()
 {
     MovieData movie1 = {"Movie1", "Director1", 1, 60};
     MovieData movie2 = {"Movie2", "Director2", 2, 120};
@@ -41,5 +42,4 @@ int main()
     display(movie1);
     std::cout << "Movie 2:" << std::endl;
     display(movie2);
-
 }

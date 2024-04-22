@@ -1,3 +1,23 @@
+/*
+Inventory Program
+
+Write a program that uses a structure to store the following inventory data in a file:
+Item Description
+Quantity on Hand
+Wholesale Cost
+Retail Cost
+Date Added to Inventory
+
+The program should have a menu that allows the user to perform the following tasks:
+• Add new records to the file.
+• Display any record in the file.
+• Change any record in the file.
+
+Input Validation: The program should not accept quantities, or wholesale or retail
+costs, less than 0. The program should not accept dates that the programmer determines
+are unreasonable.
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -15,6 +35,20 @@ void addInventoryRecord(InventoryItem &, std::fstream &);
 void displayInventoryRecord(InventoryItem &, std::fstream &);
 void changeInventoryRecord(InventoryItem &, std::fstream &);
 long position(int);
+
+bool dateValidate(const std::string &date)
+{
+    if (date.size() != 10 || date[2] != '/' || date[5] != '/')
+        return false;
+
+    for (int i = 0; i < 10; ++i)
+    {
+        if (i != 2 && i != 5 && !isdigit(date[i]))
+            return false;
+    }
+
+    return true;
+}
 
 int main()
 {
@@ -80,7 +114,15 @@ void addInventoryRecord(InventoryItem &InventoryRecord, std::fstream &file)
             {
                 std::cout << "Date Added (MM/DD/YYYY): ";
                 std::cin >> InventoryRecord.dateAdded;
-                file.write(reinterpret_cast<char *>(&InventoryRecord), sizeof(InventoryRecord));
+                if (!dateValidate(InventoryRecord.dateAdded))
+                {
+                    std::cout << "Invalid Date Format" << std::endl;
+                    return;
+                }
+                else
+                {
+                    file.write(reinterpret_cast<char *>(&InventoryRecord), sizeof(InventoryRecord));
+                }
             }
         }
     }
@@ -110,18 +152,48 @@ void changeInventoryRecord(InventoryItem &InventoryRecord, std::fstream &file)
     file.read(reinterpret_cast<char *>(&InventoryRecord), sizeof(InventoryRecord));
     std::cout << "Enter updated inventory details:" << std::endl;
     std::cout << "Description: ";
-    std::cin.ignore();
-    getline(std::cin, InventoryRecord.description);
+    std::cin >> InventoryRecord.description;
     std::cout << "Quantity: ";
     std::cin >> InventoryRecord.quantity;
-    std::cout << "Wholesale Cost: $";
-    std::cin >> InventoryRecord.wholesaleCost;
-    std::cout << "Retail Cost: $";
-    std::cin >> InventoryRecord.retailCost;
-    std::cout << "Date Added (MM/DD/YYYY): ";
-    std::cin >> InventoryRecord.dateAdded;
-    file.seekp(position(input), std::ios::beg);
-    file.write(reinterpret_cast<char *>(&InventoryRecord), sizeof(InventoryRecord));
+    if (InventoryRecord.quantity < 0)
+    {
+        std::cout << "Error";
+        return;
+    }
+    else
+    {
+        std::cout << "Wholesale Cost: $";
+        std::cin >> InventoryRecord.wholesaleCost;
+        if (InventoryRecord.wholesaleCost < 0)
+        {
+            std::cout << "Error";
+            return;
+        }
+        else
+        {
+            std::cout << "Retail Cost: $";
+            std::cin >> InventoryRecord.retailCost;
+            if (InventoryRecord.retailCost < 0)
+            {
+                std::cout << "Error";
+                return;
+            }
+            else
+            {
+                std::cout << "Date Added (MM/DD/YYYY): ";
+                std::cin >> InventoryRecord.dateAdded;
+                if (!dateValidate(InventoryRecord.dateAdded))
+                {
+                    std::cout << "Invalid Date Format" << std::endl;
+                    return;
+                }
+                else
+                {
+                    file.write(reinterpret_cast<char *>(&InventoryRecord), sizeof(InventoryRecord));
+                }
+            }
+        }
+    }
 }
 
 long position(int input)

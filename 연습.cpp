@@ -50,17 +50,40 @@ void addInventoryRecord(InventoryItem &InventoryRecord, std::fstream &file)
     file.seekp(0, std::ios::end);
     std::cout << "Enter inventory data:" << std::endl;
     std::cout << "Description: ";
-    std::cin.ignore();
-    getline(std::cin, InventoryRecord.description);
+    std::cin >> InventoryRecord.description;
     std::cout << "Quantity: ";
     std::cin >> InventoryRecord.quantity;
-    std::cout << "Wholesale Cost: $";
-    std::cin >> InventoryRecord.wholesaleCost;
-    std::cout << "Retail Cost: $";
-    std::cin >> InventoryRecord.retailCost;
-    std::cout << "Date Added (MM/DD/YYYY): ";
-    std::cin >> InventoryRecord.dateAdded;
-    file.write(reinterpret_cast<char *>(&InventoryRecord), sizeof(InventoryRecord));
+    if (InventoryRecord.quantity < 0)
+    {
+        std::cout << "Error";
+        return;
+    }
+    else
+    {
+        std::cout << "Wholesale Cost: $";
+        std::cin >> InventoryRecord.wholesaleCost;
+        if (InventoryRecord.wholesaleCost < 0)
+        {
+            std::cout << "Error";
+            return;
+        }
+        else
+        {
+            std::cout << "Retail Cost: $";
+            std::cin >> InventoryRecord.retailCost;
+            if (InventoryRecord.retailCost < 0)
+            {
+                std::cout << "Error";
+                return;
+            }
+            else
+            {
+                std::cout << "Date Added (MM/DD/YYYY): ";
+                std::cin >> InventoryRecord.dateAdded;
+                file.write(reinterpret_cast<char *>(&InventoryRecord), sizeof(InventoryRecord));
+            }
+        }
+    }
 }
 
 void displayInventoryRecord(InventoryItem &InventoryRecord, std::fstream &file)
@@ -105,4 +128,3 @@ long position(int input)
 {
     return sizeof(InventoryItem) * (input - 1);
 }
-

@@ -7,6 +7,6 @@ Matrix Subtraction (Matrix a & b)
 [    0.00    0.00   ]
 [    0.00    0.00   ]
 
-Matrix Scalar Multiplication (Matrix a & b)
-[    0.00    0.00   ]
-[    0.00    0.00   ]
+Matrix Multiplication (Matrix a & b)
+[    7.00    10.00   ]
+[    15.00    22.00   ]

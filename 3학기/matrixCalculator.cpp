@@ -134,34 +134,34 @@ int main()
         
         switch (choice){
             case 1:
-                //clear_terminal();
+                clear_terminal();
                 calc_sum(matrix1, matrix2, sum);
                 print_matrix(outfile, sumName, matrixName1, matrixName2, sum);
                 break;
             case 2:
-                //clear_terminal();
+                clear_terminal();
                 calc_diff(matrix1, matrix2, diff);
                 print_matrix(outfile, diffName, matrixName1, matrixName2, diff);
                 break;
             case 3: 
-                //clear_terminal();
+                clear_terminal();
                 double scalar;
                 get_scalar(scalar);
                 scalar_mult(scalar, matrix1, matrix2, k_m);
                 print_matrix(outfile, k_mName, matrixName1, matrixName2, k_m);
                 break;
             case 4:
-                //clear_terminal();
+                clear_terminal();
                 calc_prod(matrix1, matrix2, prod);
                 print_matrix(outfile, prodName, matrixName1, matrixName2, prod);
                 break;
             case 5:
-                //clear_terminal();
+                clear_terminal();
                 calc_inv(matrix1, matrix2, inv);
                 print_matrix(outfile, invName, matrixName1, matrixName2, inv);
                 break;
             case 6:
-                //clear_terminal();
+                clear_terminal();
                 cout << "Exiting program. Bye Bye" << endl;
                 return 0;
             default:
@@ -172,7 +172,5 @@ int main()
     outfile.close();
     return 0;
 }
-
-//clear the terminal after every operation
 
 //updating psuedocode

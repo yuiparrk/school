@@ -1,6 +1,11 @@
+/*
+-------------> TO GET THE CALCULATIONS YOU NEED TO EXIT OUT OF THE PROGRAM (PRESS 6) <-------------
+*/
+
 #include <iostream>
 #include <fstream>
 
+//define structure
 using namespace std;
 struct Matrix {
     double a11;
@@ -9,6 +14,7 @@ struct Matrix {
     double a22;
 };
 
+//print/format matrix
 void print_matrix(ofstream &outfile, string operation, string matrixName1, string matrixName2, Matrix &matrix) {
     outfile << "\nMatrix " << operation << " (Matrix " << matrixName1 << " & " << matrixName2 << ")\n";
     outfile << fixed << setprecision(2);
@@ -19,6 +25,7 @@ void print_matrix(ofstream &outfile, string operation, string matrixName1, strin
     cout << "Calculation successful. Press 6 to exit program and see calculations stored in matrix.txt\n";
     }
 
+//matrix input
 void get_matrix(string &name, Matrix &matrix){
     cout << "Input name of matrix: ";
     cin >> name;
@@ -32,11 +39,14 @@ void get_matrix(string &name, Matrix &matrix){
     cin >> matrix.a22;
 }
 
-void get_scalar(double scalar){
+//scalar value input
+double get_scalar(double scalar){
     cout << "Enter the scalar value: ";
     cin >> scalar;
+    return scalar;
 }
 
+//matrix addition
 void calc_sum(Matrix &matrix1, Matrix &matrix2, Matrix &sum){
     sum.a11 = matrix1.a11 + matrix2.a11;
     sum.a12 = matrix1.a12 + matrix2.a12;
@@ -44,6 +54,7 @@ void calc_sum(Matrix &matrix1, Matrix &matrix2, Matrix &sum){
     sum.a22 = matrix1.a22 + matrix2.a22;
 }
 
+//matrix subtraction
 void calc_diff(Matrix &matrix1, Matrix &matrix2, Matrix &diff){
     diff.a11 = matrix1.a11 - matrix2.a11;
     diff.a12 = matrix1.a12 - matrix2.a12;
@@ -51,6 +62,7 @@ void calc_diff(Matrix &matrix1, Matrix &matrix2, Matrix &diff){
     diff.a22 = matrix1.a22 - matrix2.a22;
 }
 
+//scalar multiplication
 void scalar_mult(double scalar, Matrix &matrix1, Matrix &matrix2, Matrix &k_m){
     int choice;
     cout << "Which matrix would you like to perform scalar multiplication on?\n"; 
@@ -69,6 +81,7 @@ void scalar_mult(double scalar, Matrix &matrix1, Matrix &matrix2, Matrix &k_m){
     }
 }
 
+//matrix multiplication
 void calc_prod(Matrix &matrix1, Matrix &matrix2, Matrix &prod){
     prod.a11 = matrix1.a11 * matrix2.a11 + matrix1.a12 * matrix2.a21;
     prod.a12 = matrix1.a11 * matrix2.a12 + matrix1.a12 * matrix2.a22;
@@ -76,8 +89,9 @@ void calc_prod(Matrix &matrix1, Matrix &matrix2, Matrix &prod){
     prod.a22 = matrix1.a21 * matrix2.a12 + matrix1.a22 * matrix2.a22;
 }
 
+//matrix inverse
 void calc_inv(Matrix &matrix1, Matrix &matrix2, Matrix &inv){
-    float det = matrix1.a11 * matrix1.a22 - matrix1.a21 * matrix1.a12;
+    double det = matrix1.a11 * matrix1.a22 - matrix1.a21 * matrix1.a12;
 
     int choice;
     cout << "Which matrix would you like to perform matrix inverse on?\n"; 
@@ -96,6 +110,7 @@ void calc_inv(Matrix &matrix1, Matrix &matrix2, Matrix &inv){
     }
 }
 
+//print selection menu (called in main)
 void print_menu(){
     cout << "\nSelect operation?\n";
     cout << "1. Matrix addition\n";
@@ -106,6 +121,7 @@ void print_menu(){
     cout << "6. Exit\n";
 }
 
+//clearing the terminal so that the print menu text doesn't show up after
 void clear_terminal() {
 #ifdef _WIN32
     system("cls");  // Windows
@@ -118,8 +134,10 @@ int main()
 {
     ofstream outfile("matrix.txt");
 
-    int choice;    
+    int choice;
+    //intialize individual matrix structures  
     Matrix matrix1, matrix2, sum, diff, prod, inv, k_m;
+    //names of matrix and operations (used for printing)
     string matrixName1, matrixName2, sumName = "Addition", diffName = "Subtraction", prodName = "Multiplication";
     string invName = "Inverse", k_mName = "Scalar Multiplication";
 
@@ -146,7 +164,7 @@ int main()
             case 3: 
                 clear_terminal();
                 double scalar;
-                get_scalar(scalar);
+                scalar = get_scalar(scalar);
                 scalar_mult(scalar, matrix1, matrix2, k_m);
                 print_matrix(outfile, k_mName, matrixName1, matrixName2, k_m);
                 break;
@@ -172,5 +190,3 @@ int main()
     outfile.close();
     return 0;
 }
-
-//updating psuedocode

@@ -1,4 +1,0 @@
-
-Matrix Inverse (Matrix a & b)
-[    -2.00    1.00   ]
-[    1.50    -0.50   ]

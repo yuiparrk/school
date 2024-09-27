@@ -186,6 +186,7 @@ int main()
                 return 0;
             default:
                 cout << "Invalid input. Please try again." << endl;
+                return 1;
         }
     }
 

@@ -125,11 +125,15 @@ void print_menu(){
 
 //clearing the terminal so that the print menu text doesn't show up after
 void clear_terminal() {
+    int result;
 #ifdef _WIN32
-    system("cls");  // Windows
+    result = system("cls");  // Windows
 #else
-    system("clear");  // macOS
+    result = system("clear");  // macOS
 #endif
+    if (result != 0){
+      cout << "Erorr in clearing terminal";
+    }
 }
 
 int main()

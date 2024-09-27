@@ -1,4 +1,4 @@
 
-Matrix Scalar Multiplication (Matrix a & b)
-[    4.00    172.00   ]
-[    212.00    92.00   ]
+Matrix Inverse (Matrix a & b)
+[    -2.00    1.00   ]
+[    1.50    -0.50   ]

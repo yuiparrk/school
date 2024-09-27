@@ -91,18 +91,20 @@ void calc_prod(Matrix &matrix1, Matrix &matrix2, Matrix &prod){
 
 //matrix inverse
 void calc_inv(Matrix &matrix1, Matrix &matrix2, Matrix &inv){
-    double det = matrix1.a11 * matrix1.a22 - matrix1.a21 * matrix1.a12;
+    double det;
 
     int choice;
     cout << "Which matrix would you like to perform matrix inverse on?\n"; 
     cin >> choice;
     
     if (choice == 1){
+        det = matrix1.a11 * matrix1.a22 - matrix1.a21 * matrix1.a12;
         inv.a11 = matrix1.a22 / det; 
         inv.a12 = -matrix1.a12 / det;
         inv.a21 = -matrix1.a21 / det;
         inv.a22 = matrix1.a11 / det;
     } else if (choice == 2) {
+        det = matrix2.a11 * matrix2.a22 - matrix2.a21 * matrix2.a12;
         inv.a11 = matrix2.a22 / det; 
         inv.a12 = -matrix2.a12 / det;
         inv.a21 = -matrix2.a21 / det;

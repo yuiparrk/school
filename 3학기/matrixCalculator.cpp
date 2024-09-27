@@ -153,6 +153,7 @@ int main()
         cin >> choice;
         
         switch (choice){
+            double scalar;
             case 1:
                 clear_terminal();
                 calc_sum(matrix1, matrix2, sum);
@@ -165,7 +166,6 @@ int main()
                 break;
             case 3: 
                 clear_terminal();
-                double scalar;
                 scalar = get_scalar(scalar);
                 scalar_mult(scalar, matrix1, matrix2, k_m);
                 print_matrix(outfile, k_mName, matrixName1, matrixName2, k_m);

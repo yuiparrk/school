@@ -23,6 +23,14 @@ void print_matrix(ofstream &outfile, string operation, string matrixName1, strin
     outfile << "    " << matrix.a12 << "   ]\n";
     outfile << "[    " << matrix.a21;
     outfile << "    " << matrix.a22 << "   ]\n";
+
+    cout << "\nMatrix " << operation << " (Matrix " << matrixName1 << " & " << matrixName2 << ")\n";
+    cout << fixed << setprecision(2);
+    cout << "[    " << matrix.a11;
+    cout << "    " << matrix.a12 << "   ]\n";
+    cout << "[    " << matrix.a21;
+    cout << "    " << matrix.a22 << "   ]\n";
+
     cout << "Calculation successful. Press 6 to exit program and see calculations stored in matrix.txt\n";
     }
 
@@ -66,7 +74,7 @@ void calc_diff(Matrix &matrix1, Matrix &matrix2, Matrix &diff){
 //scalar multiplication
 void scalar_mult(double scalar, Matrix &matrix1, Matrix &matrix2, Matrix &k_m){
     int choice;
-    cout << "Which matrix would you like to perform scalar multiplication on?\n"; 
+    cout << "Which matrix would you like to perform scalar multiplication on?(1 or 2)\n"; 
     cin >> choice;
     
     if (choice == 1){
@@ -95,7 +103,7 @@ void calc_inv(Matrix &matrix1, Matrix &matrix2, Matrix &inv){
     double det;
 
     int choice;
-    cout << "Which matrix would you like to perform matrix inverse on?\n"; 
+    cout << "Which matrix would you like to perform matrix inverse on?(1 or 2)\n"; 
     cin >> choice;
     
     if (choice == 1){

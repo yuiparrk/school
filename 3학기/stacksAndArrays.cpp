@@ -1,41 +1,44 @@
 #include <iostream>
 using namespace std;
 
-int const maxSize = 200;
+const int maxSize = 200;
 int stack[maxSize];
 int top = -1;
 
 void printstack(){
-    cout << stack;
-
+    //cout << stack;
 }
 
-void push(){
-    
+void push(int element){
+    if (top < maxSize) {
+        top++;
+        stack[top] = element;
+    }
 }
-
+/*
 void top(){
     if (top >= 0){
         cout << "The top element is: " << stack[top] << endl;
     } else {
         cout << "Error: The stack is empty"; // make this a actual error check if possible
     }
-}
+}*/
 
 void pop(){
-    
+
 }
 
 void purge(){
-    
+    top = -1;
+    cout << "The stack is purged";
 }
 
 void printmenu(){
     cout << "\nSelect operation?\n";
     cout << 'A. to PUSH a number to the stack\n';
     cout << 'B. to POP an integer from the stack\n';
-    cout << 'C. to output the top of the stack\n';
-    cout << 'D. to purge the stack\n';
+    cout << 'C. to output the TOP of the stack\n';
+    cout << 'D. to PURGE the stack\n';
     cout << 'E. to EXIT the Program\n';
 }
 
@@ -54,6 +57,7 @@ void clear_terminal() {
 
 
 int main() {
+    int element;
     char choice;
 
     while (true) {
@@ -61,27 +65,31 @@ int main() {
         cin >> choice;
 
         switch (choice){
-            case A || a:
+            case 'A':
+            case 'a':
                 clear_terminal();
-                print
-            case B || b:
-            case C || c:
-            case D || d:
-            case E || e:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                push(element);
+                printstack();
+            case 'B':
+            case 'b':
+                clear_terminal();
+                pop();
+                printstack();
+            case 'C':
+            case 'c':
+                clear_terminal();
+                //top();
+                printstack();
+            case 'D':
+            case 'd':
+                clear_terminal();
+                purge();
+                printstack();
+            case 'E':
+            case 'e':
+                clear_terminal();
+                cout << "Exiting program. Bye Bye" << endl;
+                return 0;
 
         }
         

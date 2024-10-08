@@ -4,6 +4,8 @@ using namespace std;
 
 void push(){}
 
+void top(){}
+
 co
 
 

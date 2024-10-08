@@ -94,7 +94,9 @@ int main() {
                 clear_terminal();
                 cout << "Exiting program. Bye Bye" << endl;
                 return 0;
-            defualt
+            default:
+               cout << "Invalid input. Please try again." << endl;
+                return 1; 
 
         }
         

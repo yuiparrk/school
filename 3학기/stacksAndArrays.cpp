@@ -57,7 +57,7 @@ int main() {
         cin >> choice;
 
         switch (choice){
-            case :
+            case A:
 
 
 

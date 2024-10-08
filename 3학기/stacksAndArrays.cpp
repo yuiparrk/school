@@ -1,21 +1,22 @@
 #include <iostream>
 using namespace std;
 
-const int maxSize = 99;  // adjust max stack size here
+const int maxSize = 99; // adjust max stack size here
 int stack[maxSize];
-int top = -1;  //start array index IT WORKS!!
+int top = -1; // start array index IT WORKS!!
 
-//print the live stack
+// print the live stack
 void printstack()
-{   
+{
     cout << "\nCurrent Stack: [ ";
-    for(int i = 0; i < top + 1; i++){
+    for (int i = 0; i < top + 1; i++)
+    {
         cout << stack[i] << " ";
     }
     cout << "]";
 }
 
-//push to stack operation
+// push to stack operation
 void push(int element)
 {
     if (top < maxSize - 1)
@@ -25,30 +26,30 @@ void push(int element)
 
             cout << "Enter the element: ";
             cin >> element;
-            
-                if (cin.fail() || element < 0 || element > 99)
-                {
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // check valid input for no text IT WORKS!!!
-                    cout << "Invalid input. Please enter an integer between 0 and 99\n";
-                }
-                
-                else {
-                top++;
-                    stack[top] = element;
-                    cout << "\nPushed " << element << " on the stack\n";
-                    break; 
-                }
-                
+
+            if (cin.fail() || element < 0 || element > 99)
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // check valid input for no text IT WORKS!!!
+                cout << "Invalid input. Please enter an integer between 0 and 99\n";
             }
-          
-        }
-        else{
-           cout<< "Error overflow, stack is full\n"; 
+
+            else
+            {
+                top++;
+                stack[top] = element;
+                cout << "\nPushed " << element << " on the stack\n";
+                break;
+            }
         }
     }
-    
-//print the top of the stack value
+    else
+    {
+        cout << "Error overflow, stack is full\n";
+    }
+}
+
+// print the top of the stack value
 void displayTop()
 {
     if (top >= 0)
@@ -64,14 +65,17 @@ void displayTop()
 // pop off the stack
 void pop()
 {
-    if (top >= 0){
+    if (top >= 0)
+    {
         cout << "\nPopped " << stack[top] << " off the stack\n";
         top--;
-    } else {
+    }
+    else
+    {
         cout << "Error underflow, stack is empty";
     }
 }
-//purge the stack
+// purge the stack
 void purge()
 {
     top = -1;
@@ -102,7 +106,7 @@ void clear_terminal()
         cout << "\nError in clearing terminal\n";
     }
 }
-//main
+// main
 int main()
 {
     int element;

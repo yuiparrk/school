@@ -14,20 +14,25 @@ void push(int element)
 {
     if (top < maxSize - 1)
     {
-        while (true){
+        while (true)
+        {
 
             cout << "Enter the element: ";
             cin >> element;
+
+            if (cin.fail())
+            {
+                cin.clear();                                         
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); //check input
+                cout << "Invalid input. Please enter an integer between 0 and 99.\n";
+                continue; 
+            }
             if (element >= 0 && element <= 99)
             {
                 top++;
                 stack[top] = element;
                 cout << "Pushed " << element << " on the stack\n";
                 break;
-            }
-            else {
-                cout << "Invalid Answer it Must be Integer Between 1-99\n";
-                continue;
             }
         }
     }
@@ -47,13 +52,12 @@ void displayTop()
 
 void pop()
 {
-    
 }
 
 void purge()
 {
     top = -1;
-    cout << "The stack is purged";
+    cout << "\nThe stack is purged\n";
 }
 
 void printmenu()

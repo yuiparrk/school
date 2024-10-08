@@ -5,6 +5,11 @@ int const maxSize = 200;
 int stack[maxSize];
 int top = -1;
 
+void printstack(){
+    cout << stack;
+
+}
+
 void push(){
     
 }
@@ -29,36 +34,40 @@ void printmenu(){
     cout << "\nSelect operation?\n";
     cout << 'A. to PUSH a number to the stack\n';
     cout << 'B. to POP an integer from the stack\n';
-    cout << 'C. to output the top of the stack\n':
+    cout << 'C. to output the top of the stack\n';
     cout << 'D. to purge the stack\n';
     cout << 'E. to EXIT the Program\n';
 }
 
-
 //clearing the terminal so that the print menu text doesn't show up after
 void clear_terminal() {
     int result;
-#ifdef _WIN32
-    result = system("cls");  // Windows
-#else
-    result = system("clear");  // macOS
-#endif
-    if (result != 0){
-      cout << "Erorr in clearing terminal";
-    }
+    #ifdef _WIN32
+        result = system("cls");  // Windows
+    #else
+        result = system("clear");  // macOS
+    #endif
+        if (result != 0){
+        cout << "Erorr in clearing terminal";
+        }
 }
 
 
 int main() {
-    int choice;
+    char choice;
 
     while (true) {
         printmenu();
         cin >> choice;
 
         switch (choice){
-            case A:
-
+            case A || a:
+                clear_terminal();
+                print
+            case B || b:
+            case C || c:
+            case D || d:
+            case E || e:
 
 
 

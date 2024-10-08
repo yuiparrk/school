@@ -54,7 +54,7 @@ void displayTop()
 {
     if (top >= 0)
     {
-        cout << "The top element is: " << stack[top] << endl;
+        cout << "The top element is: " << stack[top] << "\n";
     }
     else
     {
@@ -147,11 +147,10 @@ int main()
         case 'e':
             clear_terminal();
             cout << "\nExiting program. Bye Bye\n" // ....for real we done
-                 << endl;
             return 0;
         default:
             clear_terminal();
-            cout << "Invalid input. Please try again" << endl; // IT works!!!!!
+            cout << "Invalid input. Please try again\n"; // IT works!!!!!
             printstack();
             continue;
         }

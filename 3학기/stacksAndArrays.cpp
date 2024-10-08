@@ -146,7 +146,7 @@ int main()
         case 'E':
         case 'e':
             clear_terminal();
-            cout << "\nExiting program. Bye Bye\n" // ....for real we done
+            cout << "\nExiting program. Bye Bye\n"; // ....for real we done
             return 0;
         default:
             clear_terminal();

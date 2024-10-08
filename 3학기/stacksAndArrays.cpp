@@ -6,21 +6,28 @@ int stack[maxSize];
 int top = -1;
 
 void printstack(){
-    //cout << stack;
+   //cout << "["<< stack << "]";
 }
 
 void push(int element){
     if (top < maxSize - 1) {
-        top++;
-        stack[top] = element;
-    }
+        cout << "Enter the element: ";
+        cin >> element;
+        if (element >= 0 && element <= 99) {
+            
+            top++;
+            stack[top] = element;
+            cout << "Pushed " << element << "on the stack";
+        } else 
+            cout << "Invalid Answer it Must be Integer Between 1-99";
+        }
 }
 
 void displayTop(){
     if (top >= 0){
         cout << "The top element is: " << stack[top] << endl;
     } else {
-        cout << "Error underflow, stack is Empty"; // make this a actual error check if possible
+        cout << "Error underflow, stack is empty"; // make this a actual error check if possible
     }
 }
 
@@ -92,10 +99,10 @@ int main() {
             case 'E':
             case 'e':
                 clear_terminal();
-                cout << "Exiting program. Bye Bye" << endl;
+                cout << "\nExiting program. Bye Bye\n" << endl;
                 return 0;
             default:
-               cout << "Invalid input. Please try again." << endl;
+                cout << "Invalid input. Please try again." << endl;
                 return 1; 
 
         }

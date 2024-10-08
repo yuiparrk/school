@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int maxSize = 200;
+int const maxSize = 200;
 int stack[maxSize];
 int top = -1;
 
@@ -13,7 +13,7 @@ void top(){
     if (top >= 0){
         cout << "The top element is: " << stack[top] << endl;
     } else {
-        cout << "Error: The stack is empty";
+        cout << "Error: The stack is empty"; // make this a actual error check if possible
     }
 }
 
@@ -27,17 +27,11 @@ void purge(){
 
 void printmenu(){
     cout << "\nSelect operation?\n";
-    cout << 'Type A to PUSH a number to the stack\n';
-    cout << 'Type B to POP an integer from the stack\n';
-    cout << 'Type C to output the top of the stack\n':
-    cout << 'Type D to purge the ste'
-
-
-
-
-
-
-    
+    cout << 'A. to PUSH a number to the stack\n';
+    cout << 'B. to POP an integer from the stack\n';
+    cout << 'C. to output the top of the stack\n':
+    cout << 'D. to purge the stack\n';
+    cout << 'E. to EXIT the Program\n';
 }
 
 
@@ -58,7 +52,32 @@ void clear_terminal() {
 int main() {
     int choice;
 
-    
+    while (true) {
+        printmenu();
+        cin >> choice;
+
+        switch (choice){
+            case 1:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+        
+
+    }
 }
 
 
@@ -68,10 +87,6 @@ push function
 stack[top + 1] = element
 
 pop function
-
-
-display top function
-if top is greater than -1 than stack[top] else empty (error check)
 
 purge function
 idk

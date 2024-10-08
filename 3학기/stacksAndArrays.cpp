@@ -6,7 +6,7 @@ int stack[maxSize];
 int top = -1; // start array index IT WORKS!!
 
 // print the live stack
-void printstack()
+void printStack()
 {
     cout << "\nCurrent Stack: [ ";
     for (int i = 0; i < top + 1; i++)
@@ -82,7 +82,7 @@ void purge()
     cout << "\nThe stack is purged\n";
 }
 // print the menu
-void printmenu()
+void printMenu()
 {
     cout << "\n\nSelect operation?\n";
     cout << "A. to PUSH a number to the stack\n";
@@ -93,7 +93,7 @@ void printmenu()
 }
 
 // clearing the terminal so that the print menu text doesn't show up after
-void clear_terminal()
+void clearTerminal()
 {
     int result;
 #ifdef _WIN32
@@ -114,44 +114,44 @@ int main()
 
     while (true)
     {
-        printmenu();
+        printMenu();
         cin >> choice;
 
         switch (choice) // choosing which menu option to run
         {
         case 'A':
         case 'a':
-            clear_terminal();
+            clearTerminal();
             push(element);
-            printstack();
+            printStack();
             break;
         case 'B':
         case 'b':
-            clear_terminal();
+            clearTerminal();
             pop();
-            printstack();
+            printStack();
             break;
         case 'C':
         case 'c':
-            clear_terminal();
+            clearTerminal();
             displayTop();
-            printstack();
+            printStack();
             break;
         case 'D':
         case 'd':
-            clear_terminal();
+            clearTerminal();
             purge();
-            printstack();
+            printStack();
             break;
         case 'E':
         case 'e':
-            clear_terminal();
+            clearTerminal();
             cout << "\nExiting program. Bye Bye\n"; // ....for real we done
             return 0;
         default:
-            clear_terminal();
+            clearTerminal();
             cout << "Invalid input. Please try again\n"; // IT works!!!!!
-            printstack();
+            printStack();
             continue;
         }
     }

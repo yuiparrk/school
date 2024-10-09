@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int maxSize = 99; // adjust max stack size here
+const int maxSize = 10; // adjust max stack size here
 int stack[maxSize];
 int top = -1; // start array index IT WORKS!!
 

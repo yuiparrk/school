@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 const int maxSize = 10; // adjust max stack size here
@@ -109,7 +110,7 @@ void clearTerminal()
 // main
 int main()
 {
-    int element;
+    int element = 0;
     char choice;
 
     while (true)

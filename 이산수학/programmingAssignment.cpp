@@ -4,7 +4,14 @@ using namespace std;
 
 bool checkString(string& input)
 {
-
+    for (int i = 0; i <= input.length(); i++)
+    {
+        if (input[i] == '1' && input[i+1] == '1' && input[i+2] == '0' && input[i+3] == '1')
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 int main()
@@ -19,5 +26,5 @@ int main()
     } else {
         cout << "String is NOT ACCEPTED";
     }
-
+    return 0;
 }

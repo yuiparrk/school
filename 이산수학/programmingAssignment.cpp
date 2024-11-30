@@ -2,47 +2,32 @@
 #include <string>
 using namespace std;
 
+//boolean function for checking if input contains "1101"
 bool checkString(string& input)
 {
-    int index = 0;
-    int sequence = 0;
-
-    while (index < input.length())
+    //checks from 0 to length of the input
+    for (int i = 0; i <= input.length(); i++)
     {
-        char currentCharacter = input[index];
-
-        if (currentCharacter != '0' && currentCharacter != '1')
+        if (input[i] == '1' && input[i+1] == '1' && input[i+2] == '0' && input[i+3] == '1')
+//Instead of checking for invalid characters, the if statement checks if the string "1101" is in the input string sequentially
         {
-            cout << "The character " << currentCharacter << " is invalid. (Skipped)" << endl;
-            index++;
-            continue;
+            return true; //"1101" is in the input
         }
-
-        if (sequence == 0 && currentCharacter == '1'){
-            sequence++;
-        } else if (sequence == 1 && currentCharacter == '1'){
-            sequence++;
-        } else if (sequence == 2 && currentCharacter == '0'){
-            sequence++;
-        } else if (sequence == 3 && currentCharacter == '1'){
-            return true;
-        }
-
-        index++;
     }
-    return false;
+    return false; //"1101" is not in the input
 }
 
 int main()
 {
-    string input;
-    cout << "Enter a series of input strings of 0 and 1. (Invalid input will be skipped)" << endl;
+    string input; //by using a string as the input, i can check each individual character by it's index
+    cout << "Enter a input string: ";
     cin >> input;
 
-    if (checkString(input) == true){
+    if (checkString(input) == true)
+    {
         cout << "String is ACCEPTED";
     } else {
-        cout << "String is NOT Accepted";
+        cout << "String is NOT ACCEPTED";
     }
     return 0;
 }

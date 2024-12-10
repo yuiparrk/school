@@ -14,7 +14,6 @@ a node with an existing ID (duplicate) 5
 12 Search for a node that does not exist in the LL 5
 13 Modify a node 5
 14 Purge the LL
-
 */
 
 #include <iostream>
@@ -36,4 +35,34 @@ void displayMenu()
     cout << "6. Display the list" << endl;
     cout << "7. Purge the list" << endl;
     cout << "8. Exit" << endl;
+}
+
+void addNode()
+{
+
+}
+
+void delNode()
+{
+
+}
+
+void modifyNode()
+{
+
+}
+
+void displayNode()
+{
+
+}
+
+void displayList()
+{
+
+}
+
+void purgeList()
+{
+    
 }

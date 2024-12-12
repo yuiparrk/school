@@ -22,6 +22,8 @@
         "*.rexx": "rexx",
         "__locale": "cpp",
         "string": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "istream": "cpp",
+        "__config": "cpp"
     }
 }

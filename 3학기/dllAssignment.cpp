@@ -1,28 +1,14 @@
-/*
-1 Create a LL 5
-2 Add a node to an empty LL 5
-3 Add a node to the front of the LL 5
-4 Add a node to the end of the LL 5
-5 Show what would happen if an attempt is made to add
-a node with an existing ID (duplicate) 5
-6 Add a node to somewhere between the firs and last node 5
-7 Delete a node from an empty LL (show what happens when an attempt is made to delete a node from an empty LL) 5
-8 Delete a node from the front of the LL 5
-9 Delete a node from the end of the LL 5
-10 Delete a node from somewhere between the firs and last node 5
-11 Search for a node which exists in the LL 5
-12 Search for a node that does not exist in the LL 5
-13 Modify a node 5
-14 Purge the LL
-*/
-
 #include <iostream>
 using namespace std;
 
-int main()
-{
+struct node {
+    string name;
+    int id;
+    double gpa;
+    node *nxt;
+};
 
-}
+node *start_ptr = NULL;
 
 void displayMenu()
 {
@@ -37,32 +23,26 @@ void displayMenu()
     cout << "8. Exit" << endl;
 }
 
-void addNode()
-{
+int main() {
+    int choice;
+    int id;
+    string name;
+    float gpa;
 
-}
+    while (true) {
+        displayMenu();
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-void delNode()
-{
-
-}
-
-void modifyNode()
-{
-
-}
-
-void displayNode()
-{
-
-}
-
-void displayList()
-{
-
-}
-
-void purgeList()
-{
-    
+        switch (choice) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+        }
+    }
 }

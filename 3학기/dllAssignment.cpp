@@ -5,11 +5,15 @@ struct node
 {
     string name;
     int id;
-    float gpa;
+    double gpa;
     node *nxt;
 };
 
-node *start_ptr = NULL;
+node *createList()
+{
+    node *start_ptr = NULL;
+    return start_ptr;
+}
 
 void displayMenu()
 {
@@ -24,138 +28,139 @@ void displayMenu()
     cout << "8. Exit" << endl;
 }
 
-node *createList()
-{
-    return NULL;
-}
-
-void addNode(string name, int id, float gpa)
+void addNode(node *&start_ptr, string name, int id, float gpa)
 {
     node *newnode = new node;
-    newnode -> name = name;
-    newnode -> id = id;
-    newnode -> gpa = gpa;
-    newnode -> nxt = NULL;
+    newnode->name = name;
+    newnode->id = id;
+    newnode->gpa = gpa;
+    newnode->nxt = NULL;
 
-    if (start_ptr == NULL || id < start_ptr -> id)
+    if (start_ptr == NULL || id < start_ptr->id)
     {
-        newnode -> nxt = start_ptr;
+        newnode->nxt = start_ptr;
         start_ptr = newnode;
     }
     else
     {
         node *temp2 = start_ptr;
-        while (temp2 -> nxt && temp2 -> nxt -> id < id)
+        while (temp2->nxt && temp2->nxt->id < id)
         {
-            temp2 = temp2 -> nxt;
+            temp2 = temp2->nxt;
         }
-        newnode -> nxt = temp2 -> nxt;
-        temp2 -> nxt = newnode;
+        newnode->nxt = temp2->nxt;
+        temp2->nxt = newnode;
     }
 }
 
-void deleteNode(int id)
+void deleteNode(node *&start_ptr, int id)
 {
-    if (start_ptr -> id == id)
+    if (start_ptr && start_ptr->id == id)
     {
         node *temp = start_ptr;
-        start_ptr = start_ptr -> nxt;
+        start_ptr = start_ptr->nxt;
         delete temp;
-        cout << "Node deleted";
+        cout << "Node deleted" << endl;
         return;
     }
 
     node *temp2 = start_ptr;
-    while (temp2 -> nxt && temp2 -> nxt -> id != id)
+    while (temp2 && temp2->nxt && temp2->nxt->id != id)
     {
-        temp2 = temp2 -> nxt;
+        temp2 = temp2->nxt;
     }
 
-    if (temp2 -> nxt == NULL)
+    if (temp2 && temp2->nxt)
     {
-        cout << "Node not found";
+        node *temp = temp2->nxt;
+        temp2->nxt = temp2->nxt->nxt;
+        delete temp;
+        cout << "Node deleted" << endl;
+    }
+    else
+    {
+        cout << "Node not found" << endl;
     }
 }
 
-void modifyNode(int id)
+void modifyNode(node *start_ptr, int id)
 {
     node *temp2 = start_ptr;
-    while (temp2 && temp2 -> id != id)
+    while (temp2 && temp2->id != id)
     {
-        temp2 = temp2 -> nxt;
+        temp2 = temp2->nxt;
     }
 
     if (temp2 == NULL)
     {
-        cout << "Node not found";
+        cout << "Node not found" << endl;
     }
     else
     {
         cout << "New name: ";
         cin.ignore();
-        getline(cin, temp2 -> name);
+        getline(cin, temp2->name);
         cout << "New GPA: ";
-        cin >> temp2 -> gpa;
-        cout << "Node modified";
+        cin >> temp2->gpa;
+        cout << "Node modified" << endl;
     }
 }
 
-void displayNode(int id)
+void displayNode(node *start_ptr, int id)
 {
     node *temp2 = start_ptr;
-    while (temp2 && temp2 -> id != id)
+    while (temp2 && temp2->id != id)
     {
-        temp2 = temp2 -> nxt;
+        temp2 = temp2->nxt;
     }
 
     if (temp2 == NULL)
     {
-        cout << "Node not found";
+        cout << "Node not found" << endl;
     }
     else
     {
-        cout << "Name: " << temp2 -> name << ", ID: " << temp2 -> id << ", GPA: " << temp2 -> gpa << endl;
+        cout << "Name: " << temp2->name << ", ID: " << temp2->id << ", GPA: " << temp2->gpa << endl;
     }
 }
 
-
-void displayList()
+void displayList(node *start_ptr)
 {
     node *temp2 = start_ptr;
     while (temp2)
     {
-        cout << "Name: " << temp2 -> name << ", ID: " << temp2 -> id << ", GPA: " << temp2 -> gpa << endl;
-        temp2 = temp2 -> nxt;
+        cout << "Name: " << temp2->name << ", ID: " << temp2->id << ", GPA: " << temp2->gpa << endl;
+        temp2 = temp2->nxt;
     }
 }
 
-void purgeList()
+void purgeList(node *&start_ptr)
 {
     node *temp2 = start_ptr;
     while (temp2)
     {
         node *temp = temp2;
-        temp2 = temp2 -> nxt;
+        temp2 = temp2->nxt;
         delete temp;
     }
     start_ptr = NULL;
 }
 
-bool checkDuplicateID(int id)
+bool checkDuplicateID(node *start_ptr, int id)
 {
     node *temp2 = start_ptr;
     while (temp2)
     {
-        if (temp2 -> id == id)
+        if (temp2->id == id)
         {
             return true;
         }
-        temp2 = temp2 -> nxt;
+        temp2 = temp2->nxt;
     }
     return false;
 }
 
-bool checkEmpty()
+bool checkEmpty(node *start_ptr)
 {
     return start_ptr == NULL;
 }
@@ -177,13 +182,15 @@ int main()
 {
     int choice, id;
     string name;
-    float gpa;
+    double gpa;
+    node *start_ptr;
+
     bool listCreated = false;
 
     while (true)
     {
         displayMenu();
-        cout << "Enter choice: " << endl;
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice)
@@ -194,30 +201,29 @@ int main()
             cout << "List created" << endl;
             break;
         case 2:
-            if (listCreated == false)
+            if (!listCreated)
             {
-                cout << "List does not exist;" << endl;
+                cout << "List does not exist." << endl;
                 break;
             }
             cout << "Enter name: ";
             cin.ignore();
             getline(cin, name);
             checkID(id);
-            if (checkDuplicateID(id))
+            if (checkDuplicateID(start_ptr, id))
             {
                 cout << "Duplicate ID" << endl;
                 break;
             }
             cout << "Enter GPA: ";
             cin >> gpa;
-            addNode(name, id, gpa);
+            addNode(start_ptr, name, id, gpa);
             cout << "Node added" << endl;
             break;
-
         case 3:
             if (listCreated == false)
             {
-                cout << "List does not exist;" << endl;
+                cout << "List does not exist." << endl;
                 break;
             }
             else if (start_ptr == NULL)
@@ -226,13 +232,12 @@ int main()
                 break;
             }
             checkID(id);
-            deleteNode(id);
+            deleteNode(start_ptr, id);
             break;
-
         case 4:
             if (listCreated == false)
             {
-                cout << "List does not exist;" << endl;
+                cout << "List does not exist." << endl;
                 break;
             }
             else if (start_ptr == NULL)
@@ -241,13 +246,12 @@ int main()
                 break;
             }
             checkID(id);
-            modifyNode(id);
+            modifyNode(start_ptr, id);
             break;
-
         case 5:
             if (listCreated == false)
             {
-                cout << "List does not exist;" << endl;
+                cout << "List does not exist." << endl;
                 break;
             }
             else if (start_ptr == NULL)
@@ -256,13 +260,12 @@ int main()
                 break;
             }
             checkID(id);
-            displayNode(id);
+            displayNode(start_ptr, id);
             break;
-
         case 6:
             if (listCreated == false)
             {
-                cout << "List does not exist;" << endl;
+                cout << "List does not exist." << endl;
                 break;
             }
             else if (start_ptr == NULL)
@@ -270,12 +273,12 @@ int main()
                 cout << "List is empty" << endl;
                 break;
             }
-            displayList();
+            displayList(start_ptr);
             break;
         case 7:
             if (listCreated == false)
             {
-                cout << "List does not exist;" << endl;
+                cout << "List does not exist." << endl;
                 break;
             }
             else if (start_ptr == NULL)
@@ -283,7 +286,7 @@ int main()
                 cout << "List is empty" << endl;
                 break;
             }
-            purgeList();
+            purgeList(start_ptr);
             cout << "List purged" << endl;
             break;
         case 8:
@@ -291,4 +294,3 @@ int main()
         }
     }
 }
-

@@ -210,9 +210,9 @@ int main()
             cin.ignore();
             getline(cin, name);
             checkID(id);
-            if (checkDuplicateID(start_ptr, id))
+            if (checkDuplicateID(start_ptr, id) == true)
             {
-                cout << "Duplicate ID" << endl;
+                cout << "Duplicate ID node not added" << endl;
                 break;
             }
             cout << "Enter GPA: ";

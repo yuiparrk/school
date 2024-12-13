@@ -1,16 +1,18 @@
 #include <iostream>
 using namespace std;
 
-struct node {
+struct node
+{
     string name;
     int id;
-    double gpa;
+    float gpa;
     node *nxt;
 };
 
 node *start_ptr = NULL;
 
-void displayMenu() {
+void displayMenu()
+{
     cout << "Menu:" << endl;
     cout << "1. Create list" << endl;
     cout << "2. Add a node" << endl;
@@ -22,61 +24,271 @@ void displayMenu() {
     cout << "8. Exit" << endl;
 }
 
-void createList() {
-    //no idea how to do this
+node *createList()
+{
+    return NULL;
 }
 
-void addNode(int id, string name, float gpa) {
-    node *temp;
-    node *temp2;
-    temp = new node;
-    cout << "What is the name of the student?" << endl;
-    getline(cin, name);
-    cout << "What is the student's ID? (4 digit number 1000-9999)" << endl;
-    cin >> temp -> id;
-    cout << "What is the student's GPA?" << endl;
-    cin >> temp -> gpa;
-    temp -> nxt = NULL;
+void addNode(string name, int id, float gpa)
+{
+    node *newnode = new node;
+    newnode -> name = name;
+    newnode -> id = id;
+    newnode -> gpa = gpa;
+    newnode -> nxt = NULL;
 
-    if (start_ptr == NULL) {
-        start_ptr = temp;
-    } else {
-        temp2 = start_ptr;
-        //this means list is not empty
-        while (temp2 -> nxt != NULL) {
+    if (start_ptr == NULL || id < start_ptr -> id)
+    {
+        newnode -> nxt = start_ptr;
+        start_ptr = newnode;
+    }
+    else
+    {
+        node *temp2 = start_ptr;
+        while (temp2 -> nxt && temp2 -> nxt -> id < id)
+        {
             temp2 = temp2 -> nxt;
         }
-        temp2 -> nxt = temp;
+        newnode -> nxt = temp2 -> nxt;
+        temp2 -> nxt = newnode;
     }
 }
 
-int main() {
-    int choice;
-    int id;
+void deleteNode(int id)
+{
+    if (start_ptr -> id == id)
+    {
+        node *temp = start_ptr;
+        start_ptr = start_ptr -> nxt;
+        delete temp;
+        cout << "Node deleted";
+        return;
+    }
+
+    node *temp2 = start_ptr;
+    while (temp2 -> nxt && temp2 -> nxt -> id != id)
+    {
+        temp2 = temp2 -> nxt;
+    }
+
+    if (temp2 -> nxt == NULL)
+    {
+        cout << "Node not found";
+    }
+}
+
+void modifyNode(int id)
+{
+    node *temp2 = start_ptr;
+    while (temp2 && temp2 -> id != id)
+    {
+        temp2 = temp2 -> nxt;
+    }
+
+    if (temp2 == NULL)
+    {
+        cout << "Node not found";
+    }
+    else
+    {
+        cout << "New name: ";
+        cin.ignore();
+        getline(cin, temp2 -> name);
+        cout << "New GPA: ";
+        cin >> temp2 -> gpa;
+        cout << "Node modified";
+    }
+}
+
+void displayNode(int id)
+{
+    node *temp2 = start_ptr;
+    while (temp2 && temp2 -> id != id)
+    {
+        temp2 = temp2 -> nxt;
+    }
+
+    if (temp2 == NULL)
+    {
+        cout << "Node not found";
+    }
+    else
+    {
+        cout << "Name: " << temp2 -> name << ", ID: " << temp2 -> id << ", GPA: " << temp2 -> gpa << endl;
+    }
+}
+
+
+void displayList()
+{
+    node *temp2 = start_ptr;
+    while (temp2)
+    {
+        cout << "Name: " << temp2 -> name << ", ID: " << temp2 -> id << ", GPA: " << temp2 -> gpa << endl;
+        temp2 = temp2 -> nxt;
+    }
+}
+
+void purgeList()
+{
+    node *temp2 = start_ptr;
+    while (temp2)
+    {
+        node *temp = temp2;
+        temp2 = temp2 -> nxt;
+        delete temp;
+    }
+    start_ptr = NULL;
+}
+
+bool checkDuplicateID(int id)
+{
+    node *temp2 = start_ptr;
+    while (temp2)
+    {
+        if (temp2 -> id == id)
+        {
+            return true;
+        }
+        temp2 = temp2 -> nxt;
+    }
+    return false;
+}
+
+bool checkEmpty()
+{
+    return start_ptr == NULL;
+}
+
+void checkID(int &id)
+{
+    do
+    {
+        cout << "Enter ID (1000-9999): ";
+        cin >> id;
+        if (id < 1000 || id > 9999)
+        {
+            cout << "Invalid ID" << endl;
+        }
+    } while (id < 1000 || id > 9999);
+}
+
+int main()
+{
+    int choice, id;
     string name;
     float gpa;
+    bool listCreated = false;
 
-    while (true) {
+    while (true)
+    {
         displayMenu();
-        cout << "Enter your choice: ";
+        cout << "Enter choice: " << endl;
         cin >> choice;
 
-        switch (choice) {
-            case 1:
-                //check if list already exists
-                createList();
+        switch (choice)
+        {
+        case 1:
+            start_ptr = createList();
+            listCreated = true;
+            cout << "List created" << endl;
+            break;
+        case 2:
+            if (listCreated == false)
+            {
+                cout << "List does not exist;" << endl;
                 break;
-            case 2:
-                //check if list already exists
-                addNode(id, name, gpa);
+            }
+            cout << "Enter name: ";
+            cin.ignore();
+            getline(cin, name);
+            checkID(id);
+            if (checkDuplicateID(id))
+            {
+                cout << "Duplicate ID" << endl;
                 break;
-            case 3:
-                //check if list already exists
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
+            }
+            cout << "Enter GPA: ";
+            cin >> gpa;
+            addNode(name, id, gpa);
+            cout << "Node added" << endl;
+            break;
+
+        case 3:
+            if (listCreated == false)
+            {
+                cout << "List does not exist;" << endl;
+                break;
+            }
+            else if (start_ptr == NULL)
+            {
+                cout << "List is empty" << endl;
+                break;
+            }
+            checkID(id);
+            deleteNode(id);
+            break;
+
+        case 4:
+            if (listCreated == false)
+            {
+                cout << "List does not exist;" << endl;
+                break;
+            }
+            else if (start_ptr == NULL)
+            {
+                cout << "List is empty" << endl;
+                break;
+            }
+            checkID(id);
+            modifyNode(id);
+            break;
+
+        case 5:
+            if (listCreated == false)
+            {
+                cout << "List does not exist;" << endl;
+                break;
+            }
+            else if (start_ptr == NULL)
+            {
+                cout << "List is empty" << endl;
+                break;
+            }
+            checkID(id);
+            displayNode(id);
+            break;
+
+        case 6:
+            if (listCreated == false)
+            {
+                cout << "List does not exist;" << endl;
+                break;
+            }
+            else if (start_ptr == NULL)
+            {
+                cout << "List is empty" << endl;
+                break;
+            }
+            displayList();
+            break;
+        case 7:
+            if (listCreated == false)
+            {
+                cout << "List does not exist;" << endl;
+                break;
+            }
+            else if (start_ptr == NULL)
+            {
+                cout << "List is empty" << endl;
+                break;
+            }
+            purgeList();
+            cout << "List purged" << endl;
+            break;
+        case 8:
+            return 0;
         }
     }
 }
+

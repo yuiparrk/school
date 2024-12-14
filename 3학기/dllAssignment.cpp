@@ -28,7 +28,7 @@ void displayMenu()
     cout << "8. Exit" << endl;
 }
 
-void addNode(node *&start_ptr, string name, int id, float gpa)
+void addNode(node *&start_ptr, string name, int id, double gpa)
 {
     node *temp1 = new node;
     temp1->name = name;
@@ -72,9 +72,9 @@ void deleteNode(node *&start_ptr, int id)
 
     if (temp2 && temp2->nxt)
     {
-        node *temp = temp2->nxt;
+        node *temp1 = temp2->nxt;
         temp2->nxt = temp2->nxt->nxt;
-        delete temp;
+        delete temp1;
         cout << "Node deleted" << endl;
     }
     else

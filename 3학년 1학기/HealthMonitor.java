@@ -28,8 +28,40 @@ public class HealthMonitor {
         
         dailySteps = ((dailySteps/8000) * 10) * 0.05;
 
+        double bmiNumber;
+        if (bmiCategory == 'N') {
+            bmiNumber = 10.0;
+        } else if (bmiCategory == 'O') {
+            bmiNumber = 7.0;
+        } else if (bmiCategory == 'U') {
+            bmiNumber = 5.0;
+        } else {
+            bmiNumber = 3.0;
+        }
+        bmiNumber = bmiNumber * 0.15;
+
+
+        double bloodPressureNumber;
+        if (bloodPressure == 'N') {
+            bloodPressureNumber = 10.0;
+        } else if (bloodPressure == 'E') {
+            bloodPressureNumber = 7.0;
+        } else if (bloodPressure == 'O') {
+            bloodPressureNumber = 5.0;
+        } else {
+            bloodPressureNumber = 3.0;
+        }
+        bloodPressureNumber = bloodPressureNumber * 0.10;
  
 
-
+        double sleepDisorderNumber;
+        if (sleepDisorder == 'N') {
+            sleepDisorderNumber = 10.0;
+        } else if (sleepDisorder == 'A') {
+            sleepDisorderNumber = 5.0;
+        } else {
+            sleepDisorderNumber = 3.0;
+        }
+        sleepDisorderNumber = sleepDisorderNumber * 0.10;
     }
 }

@@ -32,10 +32,8 @@ public class BlockBlast {
         // 1) STUDENT TASK: Initialize game grid
         /* WRITE YOUR CODE HERE */
 
-
-
-
-
+int gridSize = Integer.parseInt(args[0]);
+gameGrid = new boolean[gridSize][gridSize];
 
         /**
          * *******************************************************************
@@ -54,7 +52,6 @@ public class BlockBlast {
             randomIndex = rand.nextInt(5);
             currentBlock = blocks[randomIndex];
 
-
             // // TESTING PRINT STATEMENT FOR CHOOSING NEW BLOCK. YOU MUST COMMENT OUT UPON SUBMISSION
             // System.out.println("Current Block:");
             // for (int i = 0; i < currentBlock.length; i++) {
@@ -72,7 +69,6 @@ public class BlockBlast {
             /**
              * *******************************************************************
              */
-
 
             // 2) STUDENT TASK: Find block placement
             /* WRITE YOUR CODE HERE */

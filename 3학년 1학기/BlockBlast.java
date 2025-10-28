@@ -182,6 +182,7 @@ public class BlockBlast {
                         gameGrid[i][j] = false;
                     }
                 }
+            }
 
                 // TESTING PRINT STATEMENT FOR TASK 3. YOU MUST COMMENT OUT UPON SUBMISSION
                 // System.out.println("Game Board (after clearing rows/columns):");
@@ -205,7 +206,7 @@ public class BlockBlast {
                 /* WRITE YOUR CODE HERE */
 
                 score += clearedLines * 10;
-
+            }
                 // TESTING PRINT STATEMENT FOR TASK 4. YOU MUST COMMENT OUT UPON SUBMISSION
                 // System.out.println("Game Board (after calculating the score):");
                 // for (int i = 0; i < gameGrid.length; i++) {
@@ -223,22 +224,21 @@ public class BlockBlast {
                 /**
                  * *******************************************************************
                  */
-            }
-
-            // SUBMITTING TEST STATEMENT. YOU MUST UNCOMMENT OUT UPON SUBMISSION
-            System.out.println("Game Board:");
-            for (int i = 0; i < gameGrid.length; i++) {
-                for (int j = 0; j < gameGrid[i].length; j++) {
-                    if (gameGrid[i][j]) {
-                        System.out.print("X ");
-                    } else {
-                        System.out.print("_ ");
-                    }
+        
+        // SUBMITTING TEST STATEMENT. YOU MUST UNCOMMENT OUT UPON SUBMISSION
+        System.out.println("Game Board:");
+        for (int i = 0; i < gameGrid.length; i++) {
+            for (int j = 0; j < gameGrid[i].length; j++) {
+                if (gameGrid[i][j]) {
+                    System.out.print("X ");
+                } else {
+                    System.out.print("_ ");
                 }
-                System.out.println();
             }
-            System.out.println("Final Score: " + score);
-            // END OF SUBMITTING PRINT STATEMENTS
+            System.out.println();
         }
+        System.out.println("Final Score: " + score);
+        // END OF SUBMITTING PRINT STATEMENTS
+
     }
 }

@@ -1,0 +1,78 @@
+743743
+Dan
+Smith
+45.3
+General
+71
+92
+           M  M        M     M M    M  M    MM    M  M              M M       M      M      
+                      M MMM     M  M  M     M  MMM  MMM  M M  MM  M   M     MM  M    M  M  M
+ M        M M        MM      MMM    MM M M MM  M  MM M  M M        M      M M M           M 
+     M M             M MMMM M       M    M      M  M  M M M   MM MM    MM         M   M M MM
+                    M M MM  M MM M    MMM   MM  MM  M  MMMM    M    M     M              MMM
+      M  MM  M      M  MM MMMMMMM MMMM   MMMM     MMMM    M     MMM      M M    M  M  M M   
+    M    MM     M   MM MMMM M   M  MM  M MMM MMMM   MMMMMM M  MM MM MM       M       MM     
+         M    MMMMMMMMMM      MMM   MM    M MMM    MM   M  M M M MM  MMMM  M M        MMM M 
+   M           MMMM MM MM        MMM MM       M  MM     M        M MMMM    M M M  M   M     
+   M     M       MM       M MMM M       MMMMMMM  M  MMM    MMMM MMMM   MMM M M  M M         
+     MM   MMMMMMM MMMMMMMMM MM  M M    MMM  M  M M MM   M MMMMMMMM  M MM   M M        MM M M
+M    M M MMM MM MMMMMMM M           MMMM    M MMM  M M  M   M MM   MMMMMMMMM  MM   M        
+   M MM M   MMM        M M   MMMMMM    M MM    M   M M M  MMMM MMMM MMMMM     MMM  M M  M   
+ M    MMMMM M      MM M  MMMM       M   MMMM MM    MM  MM M   MMMM        M MM        M     
+        MM MMM MMMMMMMMMM           M MMMM MM  M   MMMM     MM     M MMM MMM M    M   M     
+  M M MM                M   MMM M MMMMM M   M  MM  M M MM MM  M MMMM    MM M M M    MM   M  
+ M  MM MMMM MMM   MMM MMMM M  MMM           MMMMM         MMM MMMM    MM M MMM    MMMMMMM   
+        MMMMMMMMM M   M MMM  M    M M  M MMMM            MMMM     MMMM  MMM   MMM M M    M  
+  M   MM     M M MMM MM   MMMMMM   MMM M  M  M        MMMMMM      M M M M    M M MMMMM M    
+M  M MM  MMMM M         M        M        M  MMMMMMM MMM  M M MM  M  MMM  MM    MMM   M   M 
+  MMMM       MM MMMMM    M M  M  M    MMMMM   MM MM          MM M  M M   M   MM M M         
+    MMM M MMM        MM MMMM M MMM MMMMMM       M M M       M M      M MMM MMM M MMMMM M    
+   MM  M     MMMMMMMM M      M M   MM   M     M   MM MM   M    M      M M  MM   MM          
+M   MMMMMMMM      MMMMM  M      M       MM M MMM MMMMMMMM       M MMM     MM MMM   MMMMMM M 
+ MM  MM   MMMMM MM   MMMMM MMMM MMM MMM  MMMMM M  M   M M MM   M    M  MM    M  MMMMM       
+  MM  M M   M   MMMMMMMM        MMMMMM M M        M  MMM     M M     M M MMM  M MM    MM M  
+    M  M  M MMM      MMMM  MMM  M    M MM  M  MMM MMMMMMM     M    MMM M MM M M  MM  MMMM   
+M    MMMM MMMMMMMMMMMM   MMM     M    MMM MMMMMMMMMM       MM  M MMMM M MMM M  MMMM    MM MM
+   M   MMM   MMMMM M MM MMMMMM  M             M         M MMM MM  M   M MM  MMMMM MMMMMM  MM
+    M    M     MMM MMM M   M MMMMMM M M  M           MMM M    M     MMMM    M M MMMM      M 
+    MM M  MM   M  MM MM M      MMMMMMM  MM MMM MMMMMMMMMMMM   M  MM MM M M MMMM MMMM MMMM M 
+M MM MMM  MMM M MM  M   MMM      M MMMMMMMMMMMM M MMM M       MMMMMMMMMMMMM   MMM MM   M    
+  MMM MM    MM   M MMM    MMMMM MMM   MM    MM M  M  MMM  M MMM M   M MMMMM  MM   MM  M M   
+MMM  MM MMM  M    M   MM    MMM MM M            M   MMMMM MM      M MMMMMMMMMMMMMM M MM     
+     MM  M M M  MMM  M MMMM  M MM MMMM MMMMM       MMMMM         MMM M  MM   MMMMMMM    M M 
+   M   MM   MM MM MM    MMMMM M  M  MMMMM MMMM MMMM  M    MMMMMM MM MM M M   MMM  MM MMM    
+   MMM  MMM      M  MM      MM      M   MMMMM MMMM  M M   M  M    MMMMMM M   MMMM   M   MMM 
+  M  MM MM MM   M  MM MM      MM M MM   MMMMMMMMMMM MMMMMMMM  M  MM      M M  MMM MMM  M   M
+  MM MMMMM  MMMM   M M            M  M MMM MMMMMMMMMMMM       MM M MMMM M MM MMMMMM MM   M  
+  M M MMM  MM MMMM  MM  M        M        M  MMM MMMMM  M   MMMMM M MM MMM   MMMMMMMM MM    
+  MMMM  MMM   MM MMM  MM M M  MMMM  M  M      M  MMM   MM MMM   M MM   MM  M  MM  MMMM  MM M
+ MMMM MMM MMMMMM    M M  MMM MM  MM      M M     MMMM   MM    MMM    MM   MMM  M M     M   M
+M MMMMMMMM M  M  MM MM M    M M  MMMM        M  MMMM MMMMMM M     MM  M M     MM  M   MMM   
+  MM M M   M M  M  MMM MMMM MMM     MM          M MMMMMM  MMM M M  MMM M MMM MMMM  M MM  MM 
+    MM MMMM  M M  M  MM  MMM M MMM M MMM  MMMMMMM M    M MMMMM    M   MM MMM M M M    MMMM  
+   MMMMMM MMM MMMM     M    M   M   M  MM    M M MM    MM M   MMM   MM M M MMM MMM   M  MM  
+M   M MMM MMMMM         MMM     M M MM  MMM MMMMM  MMMM M  MMMMM MM  M MMMM  MMMMM   MM M M 
+   MMMM MMMMMM   M     M    MM M       M  M   MMMMMM   MMM   MMM  M  M MM   MMMM   MMMMM    
+    MMMMMM   M MM M     MM MM  M M M      M  MM    MMMMM  MMM  M M   MM  MM MM  MMM  MM     
+   MMMMMMMMM    MMM MMM M M  M  M       M  MMMMMMM MM   MM M MMM    M MM  MMMM M  MMM MM    
+M M  MMMMMM M   MMM  MM MM  MM M MM MM    MM MM     MM    MMM  M M  MM  M      MMM MMM  M   
+M  MMM MMMMMMMMM M M  M M M MMM  M M  M    MM  MM M M MMM M  MM  MM       M  MMM  MM MM M  M
+   MM MM  MMMM M MMMMM M  M MMM    MMM MM MMMM  MM  MM M  MMM MMM MM  M  M MMMMMM MMM   MM  
+    MM M M MMMMMMMM MM M M     MMMM MM M  M  M    M MM MM  MMM     M   M M M MMMMMMM M M    
+  M  MMMM  MMMMMMMM M MMM  MM    MM       M  M MMMMM   M MM  M   M M    MM   MM MMMM        
+    M MMMM MMMM  MM  MMMM    MMM  MM  MM  MM MM M   M   M MM MMM    M  MM MMMMMMMMM     M   
+ M      MM M  MM MM  M     M  M     M  MM MM    M M  M   MM MM     MM  M M MMMMM M M   M  M 
+        MMMMMMMM  M M     MM  M MM  M MM MM  M    M M M MMM  M   M   MMM  M   M M   M M M   
+  M M M  M MMM  M M MM MM MM   MMM MM  M    M  M  MM   MM    M M  MM  M MMMMM   M        M  
+    M    MMMM MM M MM  MM  M  M MM  M  M  MMMM   M      M  MM  MMM MMMMMMM M  M             
+M           MMM M MM M MMMM  MMM M  MM M  MMMMMM      M MM  MM  MMM MMM MMM     M  M  MM    
+  M       M M MMMMMM MMM  MM  MMM    M MMM     M  M  M    MMMMM MM MMMM  MMM  MM            
+                MMMMM  MMM MM MMMMM MMM M M MM  MMM M MM MMMM MMMM MMM  MM             M    
+      M M  MMMM MMMMMMMM MM MMMMM MMMMMM MM MM  MM  M  MMMM MMMMMMMM  M  M     M   MM MMMM  
+M    M M     M M MMMM  M MM  MMMM     MM  MMMMMM    M MMMMMMM M    MM   M       MMM         
+ M  MM M       M  MMMM MM MM  M  M  M  MM        MMM   M  MMMMMMMMMM M  M MM M    M   MM    
+  M   M         M  MMM  MM  M  M M  MM  MM  MMM MMM MMMM MM  M             M MM      MM     
+       M              MM M MM M MM   MMM M  M MMMM  MMMM  M    M      M  MM M M         M  M
+      M  M M       M M M    M MM   MMMMM   M   MM MMMMMM   MM   M  M      M     M M  M MM  M
+M  MMM        M     MMM       M M MMM     M     MM  MM       M               M M M      MM  
+  M  M M  M  M   M          M   M  M  M   M M           MM M     M            M      M    M 
